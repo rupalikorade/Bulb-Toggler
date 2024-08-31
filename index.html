@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .heading{
+            text-align: center;
+        }
+        .off-img{
+            display: block;
+            margin: 10px auto;
+        }
+    .main-container{
+        display: flex;
+        justify-content: center;
+
+    }
+    .btn-toggle{
+        margin:  10px auto;
+        padding: 5px;
+        width: 100px;
+        cursor: pointer;
+        ;
+    }
+
+    </style>
+</head>
+<body>
+    <h1 class="heading">Bulb-Toggler</h1>
+    <img src="off.png" alt="bulb-img" class="off-img" id="img-bulb">
+    <div class="main-container">
+       
+        <button type="button" class="btn-toggle" onclick="bulbOn()" >ON</button>
+        <button type="button" class="btn-toggle" onclick="bulbOff()" >OFF</button>
+       
+    </div>
+   
+    
+    
+    
+</body>
+</html>
