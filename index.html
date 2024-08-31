@@ -3,52 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bulb Toggle</title>
     <style>
-        .heading{
-            text-align: center;
+        body {
+            font-family: Arial, sans-serif;
+            background: #b5c6dd;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
         }
-        .off-img{
+        .app-title {
+            text-align: center;
+            font-size: 2.5em;
+            color: #fefeff;
+            text-shadow: 2px 2px #f0f0f0;
+            margin-bottom: 20px;
+        }
+        .img-bulb {
+            height: 150px;
             display: block;
             margin: 10px auto;
+            transition: transform 0.3s;
         }
-    .main-container{
-        display: flex;
-        justify-content: center;
-
-    }
-    .btn-toggle{
-        margin:  10px auto;
-        padding: 5px;
-        width: 100px;
-        cursor: pointer;
-        ;
-    }
-
+        .img-bulb:hover {
+            transform: scale(1.1);
+        }
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .btn-toggle {
+            margin: 10px 30px;
+            width: 120px;
+            padding: 10px;
+            font-size: 1em;
+            cursor: pointer;
+            background-color: #E6B9A6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .btn-toggle:hover {
+            background-color:#ee8f67;
+            transform: scale(1.05);        }
+        
     </style>
 </head>
 <body>
-    <h1 class="heading">Bulb-Toggler</h1>
-    <img src="off.png" alt="bulb-img" class="off-img" id="img-bulb">
-    <div class="main-container">
-       
-        <button type="button" class="btn-toggle" onclick="bulbOn()" >ON</button>
-        <button type="button" class="btn-toggle" onclick="bulbOff()" >OFF</button>
-       
+    <h1 class="app-title">Bulb Toggle</h1>
+    <img src="./off.png" alt="bulb off" class="img-bulb" id="img-bulb"/>
+    <div class="btn-container">
+        <button type="button" class="btn-toggle" onclick="toggleBulb()">
+            Toggle
+        </button>
     </div>
     <script>
-        function bulbOn(){
-            const bulbElement = document.getElementById("img-bulb")
-            bulbElement.src = "./on.png"
+        function toggleBulb() {
+            const bulbElement = document.getElementById('img-bulb');
+            bulbElement.src = bulbElement.src.includes("off.png") ? "./on.png" : "./off.png";
         }
-        function bulbOff(){
-            const bulbElement = document.getElementById("img-bulb")
-            bulbElement.src = "./off.png"
-            
-                    }
     </script>
-    
-    
-    
 </body>
 </html>
